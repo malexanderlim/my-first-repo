@@ -9,9 +9,16 @@ echo "Type in a number and then press enter."
 read number
 wordcount=$(ls -l | grep -v ^1 | wc -l)
 echo "You entered: $number."
-	if [[ $number -ne $wordcount ]]
+	if [[ $number -lt $wordcount ]]
 	then 
-		echo "Sorry, wrong number! Please try again."
-	else
-		echo "$number is the correct answer! Congratulations."
+		echo "Sorry, too low! Please try again."
 	fi
+	if [[ $number -gt $wordcount ]]
+	then
+		echo "Sorry, too high! Please try again."
+	fi
+	if [[ $number -eq $wordcount ]]
+	then
+		echo "Congratulations! You guessed the right number."
+	fi
+		echo "End of program."
