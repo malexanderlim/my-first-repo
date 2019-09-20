@@ -7,7 +7,7 @@ echo "How many files are in the current directory?"
 echo "Type in a number and then press enter."
 
 read number
-wordcount=$(ls -l | grep -v ^1 | wc -l)
+wordcount=$(ls -l | grep -v ^total | wc -l)
 echo "You entered: $number."
 until [[ $number -eq $wordcount ]]
 	do
